@@ -1,0 +1,68 @@
+{%extends 'stores/base.html'%}
+{% block title %}contact us | MyStore{% endblock%}
+{% block style%}    .col-md-3
+          {
+          display: inline-block;
+          margin-left:-4px;
+          }
+          .carousel-indicators .active {
+          background-color: blue;
+            }
+          .col-md-3 img{
+          width:100%;
+          height:auto;
+          }
+          body .carousel-indicator li{
+          background-color: blue;
+          }
+          body .carousel-indicators{
+          bottom: 0;
+          }
+          body .carousel-control-prev-icon,
+          body .carousel-control-next-icon{
+          background-color: blue;
+          }
+           body .no-padding{
+           padding-left: 0,
+           padding-right: 0;
+           }
+           .custom-centered{
+             {% comment %} margin:0 auto; {% endcomment %}
+             width:600px;
+           
+             margin:0 auto;
+            }
+           {% endblock %}
+{% block body%}
+{% comment %}  {% endcomment %}
+
+<div class="container my-3">
+    <h3>Contact Us</h3>
+    <form action="/stores/contact/" method="post">{% csrf_token %}
+  <div class="form-group">
+    <label for="name">Name</label>
+    <input type="text" class="form-control" id="name" name='name' placeholder="Enter Your Name">
+  </div>
+  <div class="form-group">
+    <label for="name">Email</label>
+    <input type="email" class="form-control" id="email" name='email' placeholder="Enter Your Email">
+  </div>
+
+    <div class="form-group">
+    <label for="name">Phone</label>
+    <input type="tel" class="form-control" id="phone" name='phone' placeholder="Enter Your Phone Number">
+  </div>
+
+
+   <div class="form-group">
+    <label for="desc">How May We Help You?</label>
+    <textarea class="form-control" id="desc" name='desc' rows="3"></textarea>
+  </div>
+        <button type="submit" class="btn btn-success">Submit</button>
+</form>
+
+
+
+</div>
+
+{% endblock%}
